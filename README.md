@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## todo-pwa
+
+A Progresive Web App created with create-react-app
 
 ## Available Scripts
 
