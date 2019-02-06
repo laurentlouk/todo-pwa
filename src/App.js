@@ -165,6 +165,7 @@ class List extends Component {
     items: [],
     loading: true,
     todoItem: '',
+    // set offline mode
     offline: !navigator.onLine
   }
 
@@ -200,6 +201,7 @@ class List extends Component {
     })
     .then(response => response.json())
     .then(items => {
+      // statement for the error case
       if(items.error) {
         alert(items.error)
       } else {
@@ -220,6 +222,7 @@ class List extends Component {
     })
     .then(response => response.json())
     .then(items => {
+      // statement for the error case
       if(items.error) {
         alert(items.error)
       } else {
