@@ -14,12 +14,18 @@ workbox.clientsClaim()
 //   console.log('activate')
 // })
 
-// Cache lybraries under cdn-cach name
+// Cache libraries under cdn-cach name
 workbox.routing.registerRoute(
   new RegExp('https:.*min\.(css|js)'),
   workbox.strategies.staleWhileRevalidate({
     cacheName: 'cdn-cach'
   })
+)
+
+// Cache for the service API
+workbox.routing.registerRoute(
+  new RegExp('http://.*:4567.*\.json'),
+  workbox.strategies.networkFirst()
 )
 
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
