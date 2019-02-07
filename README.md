@@ -2,6 +2,21 @@
 
 A Progresive Web App created with create-react-app
 
+## TODO
+
+In src/App.js :
+
+Change ITEMS_URL localhost by YOUR LOCAL IP ADDRESS
+
+install, generate and change NOTIF_KEY with the `Public Key`
+
+```
+yarn global add web-push (or npm i -g web-push)
+
+web-push generate-vapid-keys
+```
+
+
 ## Available Scripts
 
 In the project directory, you can run:

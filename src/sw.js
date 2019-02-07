@@ -43,4 +43,12 @@ self.addEventListener('fetch', event => {
   }
 })
 
+// PUSH Notifications listener
+self.addEventListener('push', event => {
+  event.waitUntil(self.registration.showNotification('Todo List', {
+    icon: '/icon-120.jpg',
+    body: event.data.text()
+  }))
+})
+
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [])

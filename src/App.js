@@ -10,11 +10,12 @@ import Back from './back.png'
 
 // const ITEMS_URL = "http://[YOUR LOCAL IP ADDRESS]:4567/items.json"
 const ITEMS_URL = "http://localhost:4567/items.json"
+const NOTIF_KEY = "BBsYtYym4L-XJwIkYCxzr5bSqGv-iHJfx61TVBzpUdl9th6GP2Ltzh4WcIHL6pEAZk2CjSwnzwnJTFsgUusl9EE"
 
 function urlB64ToUint8Array(base64String) {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);
   const base64 = (base64String + padding)
-    .replace(/-/g, '+')
+    .replace(/\-/g, '+')
     .replace(/_/g, '/');
 
   const rawData = window.atob(base64);
@@ -65,7 +66,7 @@ class Profile extends Component {
   }
 
   subscribe = () => {
-    const key = "BDk-kDxLswQMajg9TJqpb9VFTjQeQmS0FE_rTVJ4f9G-v9GFkzcDt-vYkvz5dVkbCfrGmJeLTbvuNUKpOUojWB4"
+    const key = NOTIF_KEY
 
     global.registration.pushManager.subscribe({
       userVisibleOnly: true,
